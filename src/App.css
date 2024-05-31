@@ -11,10 +11,10 @@
 
 div.item{
   background-color: #fff;
-  padding: 10px 25px;
+  /* padding: -12px; */
   font-size: 16px;
   border: 1px solid #ccc;
-  line-height: 1.7;
+  /* line-height: 1.7; */
   position: relative;/**/
   /*height: 110px;*/
   margin-bottom: 20px;
@@ -23,13 +23,14 @@ div.item{
 div.item::before{
   content: attr(data-before-content);
   display: block;
-  width: 30px;
-  height: 30px;
+  width: 31px;
+  height: 31px;
   border-radius: 50%;
   color: #ccc;
-  background-color: #131f33 ;    
+  background-color: #131f33 ;  
+  line-height: 1.8;   
   position: absolute;
-  top: 0px;
+  top: -0.5px;
   left: -47px;
   text-align: center;
 }
@@ -37,6 +38,17 @@ div.item::before{
 div.body{
   display: flex;
   justify-content: space-between;
+}
+
+@media (max-width: 767px){
+  div.body{
+    display: flex;
+    flex-direction: column;
+  }
+
+  div.body-content, div.img{
+    width: 100% !important;
+  }
 }
 /*div:after{
   content: '';

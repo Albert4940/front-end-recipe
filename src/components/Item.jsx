@@ -1,6 +1,13 @@
-const Item = ({name,description,image,ingredients}) => {
+const Item = ({name,description,image,ingredients,index}) => {
  return (
-    <div class="item">
+    index === "last" ? (
+        <div className="item">
+            <div className="title">
+                <h2>It's finish, great job!</h2>
+            </div>            
+        </div>
+    ) : 
+    <div className="item" data-before-content={String(index + 1).padStart(2, '0')}>
         <div className="title">
             <h2>{name}</h2>
         </div>  
@@ -20,8 +27,8 @@ const Item = ({name,description,image,ingredients}) => {
                 }
 
             </div>
-            <div className="img" style={{width: "40%"}}>
-                <img src={image} alt="" style={{width: "100%"}}/>
+            <div className="img" style={{width: "40%",marginLeft: "5px"}}>
+                <img src={image} alt="" style={{width: "100%", borderRadius:"5px", boxShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2)"}}/>
             </div>
         </div> 
     </div>
