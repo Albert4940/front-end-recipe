@@ -1,3 +1,5 @@
+import RecipeStepTitle from "./RecipeStepTitle"
+
 const Item = ({name,description,image,ingredients,index}) => {
  return (
     index === "last" ? (
@@ -8,9 +10,10 @@ const Item = ({name,description,image,ingredients,index}) => {
         </div>
     ) : 
     <div className="item" data-before-content={String(index + 1).padStart(2, '0')}>
-        <div className="title">
+        {/* <div className="title">
             <h2>{name}</h2>
-        </div>  
+        </div>   */}
+        <RecipeStepTitle title={name}/>
         <div className="body">
             <div className="body-content" style={{width: "60%"}}>
                 <h3 className="sub-title">Description</h3>
