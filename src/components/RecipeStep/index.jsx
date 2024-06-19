@@ -1,16 +1,16 @@
 import React from 'react'
 
-import RecipeStepTitle from "./RecipeStepTitle"
-import RecipeStepDescription from "./RecipeStepDescription"
-import RecipeStepIngredients from "./RecipeStepIngredients"
-import RecipeStepImage from "./RecipeStepImage"
+import RecipeStepTitle from "../RecipeStepTitle"
+import RecipeStepDescription from "../RecipeStepDescription"
+import RecipeStepIngredients from "../RecipeStepIngredients"
+import RecipeStepImage from "../RecipeStepImage"
 
 export default class RecipeStep extends React.PureComponent{
 
-    render(){
-        const {step} = this.props
-        const {name,description,image,ingredients,index} = step
-
+    render(){        
+        
+        const {name,description,image,ingredients,index} = this.props
+        
         return (
             index === "last" ? (
                 <div className="item">

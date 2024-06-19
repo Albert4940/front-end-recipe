@@ -1,16 +1,22 @@
 import logo from './logo.svg';
 import './App.css';
+import React from 'react'
 import { data } from './data.js';
-import Item from './components/Item';
+import Recipe from './pages/Recipe/index.jsx';
 
-function App() {
-  
-  return (
-    <section class="timeline-area">
-      {data.map((item,i) => <Item key={i} {...item} index={i}/>)}
-      <Item key={"last"} index={"last"}/>
-    </section>
-  );
+class  App extends React.Component {
+  state = {
+    recipeData: data
+  }
+
+  render(){
+    const {recipeData} = this.state
+    return (
+      <div>
+        <Recipe recipeData={recipeData} />
+      </div>
+    );
+  }
 }
 
 export default App;
