@@ -4,6 +4,7 @@ export default class RecipeStepTitle extends React.PureComponent {
 
     render(){
         const {title} = this.props
+        
         return(
             <div className="title">
                 <h2>{title}</h2>

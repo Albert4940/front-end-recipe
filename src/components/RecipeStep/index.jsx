@@ -12,12 +12,9 @@ export default class RecipeStep extends React.PureComponent{
         const {name,description,image,ingredients,index} = this.props
         
         return (
-            index === "last" ? (
-                <div className="item">
-                    <div className="title">
-                        <h2>It's finish, great job!</h2>
-                    </div>            
-                </div>
+            index === "last" ? 
+            (
+                <RecipeStepTitle title="It's finish, great job!"/>                
             ) : 
             <div className="item" data-before-content={String(index + 1).padStart(2, '0')}>
                 {/* <div className="title">
