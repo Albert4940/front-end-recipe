@@ -7,6 +7,10 @@ export const data = [{
         {
             name: "Chocolat",
             gram: 300
+        },
+        {
+            name: "Vanille",
+            gram: 50
         }]
 },
 {

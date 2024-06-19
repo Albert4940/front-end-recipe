@@ -1,4 +1,7 @@
 import RecipeStepTitle from "./RecipeStepTitle"
+import RecipeStepDescription from "./RecipeStepDescription"
+import RecipeStepIngredients from "./RecipeStepIngredients"
+import RecipeStepImage from "./RecipeStepImage"
 
 const Item = ({name,description,image,ingredients,index}) => {
  return (
@@ -16,22 +19,15 @@ const Item = ({name,description,image,ingredients,index}) => {
         <RecipeStepTitle title={name}/>
         <div className="body">
             <div className="body-content" style={{width: "60%"}}>
-                <h3 className="sub-title">Description</h3>
-                <p className="description">
-                    {description} 
-                </p>
-                {ingredients.length > 0 && 
-                    (<>
-                        <h3>Related Ingredients</h3>
-                        <ul>
-                            {ingredients.map(item => (<li>{item.name} - {item.gram} Gr</li>))}
-                        </ul>
-                    </>)
+                <RecipeStepDescription description={description} />
+                {
+                    ingredients.length > 0 &&  
+                    <RecipeStepIngredients ingredients={ingredients} />
                 }
 
             </div>
             <div className="img" style={{width: "40%",marginLeft: "5px"}}>
-                <img src={image} alt="" style={{width: "100%", borderRadius:"5px", boxShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2)"}}/>
+                <RecipeStepImage image={image} />
             </div>
         </div> 
     </div>
