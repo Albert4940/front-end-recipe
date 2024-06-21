@@ -8,7 +8,7 @@ export default class RecipeStepIngredients extends React.PureComponent{
             <>
                 <h3>Related Ingredients</h3>
                 <ul>
-                    {ingredients.map((item,i) => (<li key={`${i}-${item.name}`}>{item.name} - {item.gram} Gr</li>))}
+                    {ingredients.map((item,i) => (<li key={`${i}-${item.name}`}>{item.name} - {item.quantity} {item.metrics}</li>))}
                 </ul>
             </>
         )

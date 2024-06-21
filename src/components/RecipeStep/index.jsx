@@ -9,7 +9,7 @@ export default class RecipeStep extends React.PureComponent{
 
     render(){        
         
-        const {name,description,image,ingredients,index} = this.props
+        const {title,description,image,ingredients,index} = this.props
         
         return (
             index === "last" ? 
@@ -20,7 +20,7 @@ export default class RecipeStep extends React.PureComponent{
                 {/* <div className="title">
                     <h2>{name}</h2>
                 </div>   */}
-                <RecipeStepTitle title={name}/>
+                <RecipeStepTitle title={title}/>
                 <div className="body">
                     <div className="body-content" style={{width: "60%"}}>
                         <RecipeStepDescription description={description} />

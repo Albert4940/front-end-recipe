@@ -14,7 +14,7 @@ export default class Recipe extends React.PureComponent{
 
         return (
             <section className="timeline-area">
-                <RecipeSteps steps={recipeData}/>
+                <RecipeSteps recipeSteps={recipeData}/>
             </section>
         )
     }

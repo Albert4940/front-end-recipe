@@ -6,7 +6,7 @@ import Recipe from './pages/Recipe/index.jsx';
 
 class  App extends React.Component {
   state = {
-    recipeData: data
+    recipeData: data.data
   }
 
   render(){
