@@ -4,19 +4,23 @@ import RecipeStepTitle from "../RecipeStepTitle"
 import RecipeStepDescription from "../RecipeStepDescription"
 import RecipeStepIngredients from "../RecipeStepIngredients"
 import RecipeStepImage from "../RecipeStepImage"
+import { RecipeStepsType } from '../../propTypes'
 
 export default class RecipeStep extends React.PureComponent{
+    static propTypes = {
+        recipeStepData: RecipeStepsType
+    }
 
     render(){        
-        
-        const {title,description,image,ingredients,index} = this.props
+        const {recipeStepData, isLast} = this.props
+        const {number, title, description, image, ingredients} = recipeStepData
         
         return (
-            index === "last" ? 
+            isLast ? 
             (
                 <RecipeStepTitle title="It's finish, great job!"/>                
             ) : 
-            <div className="item" data-before-content={String(index + 1).padStart(2, '0')}>
+            <div className="item" data-before-content={String(number).padStart(2, '0')}>
                 {/* <div className="title">
                     <h2>{name}</h2>
                 </div>   */}
@@ -36,5 +40,15 @@ export default class RecipeStep extends React.PureComponent{
                 </div> 
             </div>
          )
+    }
+}
+
+RecipeStep.defaultProps = {
+    recipeStepData: {
+        number: 0,
+        title: "",
+        description: "",
+        image: "",
+        ingredients:[]
     }
 }

@@ -7,8 +7,8 @@ export default class RecipeSteps extends React.PureComponent {
         const steps = recipeSteps.steps
         return(
             <>
-                {steps.map((step,i) => <RecipeStep key={i} {...step} index={i}/>)}
-                <RecipeStep key={"last"} index={"last"}/>
+                {steps.map((step,i) => <RecipeStep key={i} recipeStepData = {step} index={i}/>)}
+                <RecipeStep key={steps.length} isLast={true}/>
             </>
         )
     }

@@ -2,11 +2,11 @@ import React from "react"
 
 import RecipeSteps from "../../components/RecipeSteps"
 
-import { RecipeStepsType } from "../../propTypes"
+import { RecipeType } from "../../propTypes"
 
 export default class Recipe extends React.PureComponent{
     static propTypes = {
-        recipeData: RecipeStepsType
+        recipeData: RecipeType
     }
     
     render(){

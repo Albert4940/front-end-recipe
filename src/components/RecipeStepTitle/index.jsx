@@ -1,7 +1,10 @@
 import React from "react"
+import PropTypes from "prop-types"
 
 export default class RecipeStepTitle extends React.PureComponent {
-
+    static propTypes = {
+        title: PropTypes.string.isRequired
+    }
     render(){
         const {title} = this.props
         
